@@ -71,7 +71,8 @@ function highlight(context) {
       return;
     }
 
-    const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n/ig;
+    const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n|\/\*\*\n\s+\*\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n(?:.*?\n)*?\s+\*\//ig;
+
     let text = activeTextEditor.document.getText();
     let match;
 
@@ -84,6 +85,7 @@ function highlight(context) {
     while ((match = re.exec(text))) {
       console.log(`todo-highlighter - match[0]: ${match[0]}`);
       console.log(`todo-highlighter - match[1]: ${match[1]}`);
+      console.log(`todo-highlighter - match[2]: ${match[2]}`);
 
       let decoration = {
         range: new vscode.Range(
@@ -93,10 +95,8 @@ function highlight(context) {
         hoverMessage: 'comments'
       }
 
-      if (comments[match[1]] === undefined) {
-        comments[match[1]] = [];
-      }
-      comments[match[1]].push(decoration);
+      match[2] === undefined && comments[match[1]].push(decoration);
+      match[1] === undefined && comments[match[2]].push(decoration);
     }
     console.log('todo-highlighter - comments:');
     console.dir(comments);
