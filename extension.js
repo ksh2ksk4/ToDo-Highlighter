@@ -71,7 +71,7 @@ function highlight(context) {
       return;
     }
 
-    const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx).*/ig;
+    const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n/ig;
     let text = activeTextEditor.document.getText();
     let match;
 
