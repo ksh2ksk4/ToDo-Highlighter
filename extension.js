@@ -17,48 +17,88 @@ function highlight(context) {
     'warning',
     'xxx'
   ];
-  const backgroundColors = {
-    default: '#d66a35',  // 黄櫨染(こうろぜん)
-    changed: '#8f2e14',  // 弁柄色(べんがらいろ)
-    fixme: '#69b076',  // 薄緑(うすみどり)
-    hack: '#aa4c8f',  // 梅紫(うめむらさき)
-    note: '#d0af47',  // 芥子色(からしいろ)
-    optimize: '#a22041',  // 真紅(しんく)
-    review: '#5c929a',  // 錆浅葱(さびあさぎ)
-    todo: '#cca6bf',  // 紅藤色(べにふじいろ)
-    warning: '#19448e',  // 瑠璃紺(るりこん)
-    xxx: '#74325c'  // 暗紅色(あんこうしょく)
+  const styles = {
+    default: {
+      backgroundColor: '#d66a35',  // 黄櫨染(こうろぜん)
+      color: 'black'
+    },
+    changed: {
+      backgroundColor: '#8f2e14',  // 弁柄色(べんがらいろ)
+      color: 'black'
+    },
+    fixme: {
+      backgroundColor: '#69b076',  // 薄緑(うすみどり)
+      color: 'black'
+    },
+    hack: {
+      backgroundColor: '#aa4c8f',  // 梅紫(うめむらさき)
+      color: 'black'
+    },
+    note: {
+      backgroundColor: '#d0af47',  // 芥子色(からしいろ)
+      color: 'black'
+    },
+    optimize: {
+      backgroundColor: '#a22041',  // 真紅(しんく)
+      color: 'black'
+    },
+    review: {
+      backgroundColor: '#5c929a',  // 錆浅葱(さびあさぎ)
+      color: 'black'
+    },
+    todo: {
+      backgroundColor: '#cca6bf',  // 紅藤色(べにふじいろ)
+      color: 'black'
+    },
+    warning: {
+      backgroundColor: '#19448e',  // 瑠璃紺(るりこん)
+      color: 'black'
+    },
+    xxx: {
+      backgroundColor: '#74325c',  // 暗紅色(あんこうしょく)
+      color: 'black'
+    }
   };
   const decorationTypes = {
     default: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.default
+      backgroundColor: styles.default.backgroundColor,
+      color: styles.default.color
     }),
     changed: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.changed
+      backgroundColor: styles.changed.backgroundColor,
+      color: styles.changed.color
     }),
     fixme: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.fixme
+      backgroundColor: styles.fixme.backgroundColor,
+      color: styles.fixme.color
     }),
     hack: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.hack
+      backgroundColor: styles.hack.backgroundColor,
+      color: styles.hack.color
     }),
     note: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.note
+      backgroundColor: styles.note.backgroundColor,
+      color: styles.note.color
     }),
     optimize: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.optimize
+      backgroundColor: styles.optimize.backgroundColor,
+      color: styles.optimize.color
     }),
     review: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.review
+      backgroundColor: styles.review.backgroundColor,
+      color: styles.review.color
     }),
     todo: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.todo
+      backgroundColor: styles.todo.backgroundColor,
+      color: styles.todo.color
     }),
     warning: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.warning
+      backgroundColor: styles.warning.backgroundColor,
+      color: styles.warning.color
     }),
     xxx: vscode.window.createTextEditorDecorationType({
-      backgroundColor: backgroundColors.xxx
+      backgroundColor: styles.xxx.backgroundColor,
+      color: styles.xxx.color
     })
   };
   console.log('todo-highlighter - decorationTypes:');
