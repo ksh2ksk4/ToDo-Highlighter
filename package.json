@@ -1,31 +1,31 @@
 {
   "name": "todo-highlighter",
-	"displayName": "ToDo-Highlighter",
-	"description": "",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.57.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
+  "displayName": "ToDo-Highlighter",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
         "onCommand:todo-highlighter.helloWorld"
-	],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [{
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
             "command": "todo-highlighter.helloWorld",
             "title": "Hello World"
 
-		}]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
-	},
-	"devDependencies": {
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
         "@types/vscode": "^1.57.0",
         "@types/glob": "^7.1.3",
         "@types/mocha": "^8.2.2",
