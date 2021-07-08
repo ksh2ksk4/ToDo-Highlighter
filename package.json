@@ -7,6 +7,70 @@
   },
   "main": "./extension.js",
   "contributes": {
+    "configuration": {
+      "title": "ToDo Highlighter",
+      "properties": {
+        "todo-highlighter.keywords.activated.changed": {
+          "default": true,
+          "markdownDescription": "`changed` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.fixme": {
+          "default": true,
+          "markdownDescription": "`fixme` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.hack": {
+          "default": true,
+          "markdownDescription": "`hack` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.note": {
+          "default": true,
+          "markdownDescription": "`note` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.optimize": {
+          "default": true,
+          "markdownDescription": "`optimize` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.review": {
+          "default": true,
+          "markdownDescription": "`review` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.todo": {
+          "default": true,
+          "markdownDescription": "`todo` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.warning": {
+          "default": true,
+          "markdownDescription": "`warning` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.keywords.activated.xxx": {
+          "default": true,
+          "markdownDescription": "`xxx` キーワードを有効にする",
+          "scope": "window",
+          "type": "boolean"
+        },
+        "todo-highlighter.misc.regexps": {
+          "description": "ハイライトする文字列の正規表現を設定する",
+          "scope": "window",
+          "type": "array"
+        }
+      }
+    }
   },
   "activationEvents": [
     "*"
