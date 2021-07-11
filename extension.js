@@ -134,7 +134,23 @@ function highlight(context) {
     }
 
     //const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n|\/\*\*\n\s+\*\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n(?:.*?\n)*?\s+\*\/\n/ig;
-    const re = new RegExp('//\\s*?(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n|/\\*\\*\\n\\s+\\*\\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n(?:.*?\\n)*?\\s+\\*/\\n', 'ig');
+    //const re = new RegExp(
+    //  '//\\s*?(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n|/\\*\\*\\n\\s+\\*\\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n(?:.*?\\n)*?\\s+\\*/\\n',
+    //  'ig'
+    //);
+
+    let group = [];
+
+    for (let i = 0; i < keywords.length; i++) {
+      if (settings.keywords.activated[keywords[i]] === true) {
+        group.push(keywords[i]);
+      }
+    }
+
+    const re = RegExp(
+      '//\\s*?(' + group.join('|') + ')\\s+.*?\\n|/\\*\\*\\n\\s+\\*\\s*(' + group.join('|') + ')\\s+.*?\\n(?:.*?\\n)*?\\s+\\*/\\n',
+      'ig'
+    );
 
     let text = activeTextEditor.document.getText();
     let match;
@@ -158,8 +174,8 @@ function highlight(context) {
         hoverMessage: 'comments'
       }
 
-      match[2] === undefined && comments[match[1]].push(decoration);
-      match[1] === undefined && comments[match[2]].push(decoration);
+      match[2] === undefined && comments[match[1].toLowerCase()].push(decoration);
+      match[1] === undefined && comments[match[2].toLowerCase()].push(decoration);
     }
     console.log('todo-highlighter - comments:');
     console.dir(comments);
