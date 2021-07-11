@@ -133,7 +133,8 @@ function highlight(context) {
       return;
     }
 
-    const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n|\/\*\*\n\s+\*\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n(?:.*?\n)*?\s+\*\//ig;
+    //const re = /\/\/\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n|\/\*\*\n\s+\*\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\s+.*?\n(?:.*?\n)*?\s+\*\/\n/ig;
+    const re = new RegExp('//\\s*?(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n|/\\*\\*\\n\\s+\\*\\s*(changed|fixme|hack|note|optimize|review|todo|warning|xxx)\\s+.*?\\n(?:.*?\\n)*?\\s+\\*/\\n', 'ig');
 
     let text = activeTextEditor.document.getText();
     let match;
