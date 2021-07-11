@@ -104,6 +104,28 @@ function highlight(context) {
   console.log('todo-highlighter - decorationTypes:');
   console.dir(decorationTypes);
 
+  const configuration = vscode.workspace.getConfiguration('todo-highlighter');
+  console.log('todo-highlighter - configuration:');
+  console.dir(configuration);
+
+  let settings = {
+    'keywords': {
+      'activated': {
+        'changed': configuration.get('keywords.activated.changed'),
+        'fixme': configuration.get('keywords.activated.fixme'),
+        'hack': configuration.get('keywords.activated.hack'),
+        'note': configuration.get('keywords.activated.note'),
+        'optimize': configuration.get('keywords.activated.optimize'),
+        'review': configuration.get('keywords.activated.review'),
+        'todo': configuration.get('keywords.activated.todo'),
+        'warning': configuration.get('keywords.activated.warning'),
+        'xxx': configuration.get('keywords.activated.xxx'),
+      }
+    },
+    'misc': configuration.get('misc.regexps')
+  };
+  console.dir(settings);
+
   let activeTextEditor = vscode.window.activeTextEditor;
 
   function updateDecorations() {
