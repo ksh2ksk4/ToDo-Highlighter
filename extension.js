@@ -17,92 +17,6 @@ function highlight(context) {
     'warning',
     'xxx'
   ];
-  const styles = {
-    default: {
-      backgroundColor: '#d66a35',  // 黄櫨染(こうろぜん)
-      color: 'black'
-    },
-    changed: {
-      backgroundColor: '#8f2e14',  // 弁柄色(べんがらいろ)
-      color: 'black'
-    },
-    fixme: {
-      backgroundColor: '#69b076',  // 薄緑(うすみどり)
-      color: 'black'
-    },
-    hack: {
-      backgroundColor: '#aa4c8f',  // 梅紫(うめむらさき)
-      color: 'black'
-    },
-    note: {
-      backgroundColor: '#d0af47',  // 芥子色(からしいろ)
-      color: 'black'
-    },
-    optimize: {
-      backgroundColor: '#a22041',  // 真紅(しんく)
-      color: 'black'
-    },
-    review: {
-      backgroundColor: '#5c929a',  // 錆浅葱(さびあさぎ)
-      color: 'black'
-    },
-    todo: {
-      backgroundColor: '#cca6bf',  // 紅藤色(べにふじいろ)
-      color: 'black'
-    },
-    warning: {
-      backgroundColor: '#19448e',  // 瑠璃紺(るりこん)
-      color: 'black'
-    },
-    xxx: {
-      backgroundColor: '#74325c',  // 暗紅色(あんこうしょく)
-      color: 'black'
-    }
-  };
-  const decorationTypes = {
-    default: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.default.backgroundColor,
-      color: styles.default.color
-    }),
-    changed: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.changed.backgroundColor,
-      color: styles.changed.color
-    }),
-    fixme: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.fixme.backgroundColor,
-      color: styles.fixme.color
-    }),
-    hack: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.hack.backgroundColor,
-      color: styles.hack.color
-    }),
-    note: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.note.backgroundColor,
-      color: styles.note.color
-    }),
-    optimize: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.optimize.backgroundColor,
-      color: styles.optimize.color
-    }),
-    review: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.review.backgroundColor,
-      color: styles.review.color
-    }),
-    todo: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.todo.backgroundColor,
-      color: styles.todo.color
-    }),
-    warning: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.warning.backgroundColor,
-      color: styles.warning.color
-    }),
-    xxx: vscode.window.createTextEditorDecorationType({
-      backgroundColor: styles.xxx.backgroundColor,
-      color: styles.xxx.color
-    })
-  };
-  console.log('todo-highlighter - decorationTypes:');
-  console.dir(decorationTypes);
 
   const configuration = vscode.workspace.getConfiguration('todo-highlighter');
   console.log('todo-highlighter - configuration:');
@@ -119,7 +33,45 @@ function highlight(context) {
         'review': configuration.get('keywords.activated.review'),
         'todo': configuration.get('keywords.activated.todo'),
         'warning': configuration.get('keywords.activated.warning'),
-        'xxx': configuration.get('keywords.activated.xxx'),
+        'xxx': configuration.get('keywords.activated.xxx')
+      },
+      'decorationTypes': {
+        'changed': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.changed'),
+          color: configuration.get('keywords.color.changed')
+        }),
+        'fixme': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.fixme'),
+          color: configuration.get('keywords.color.fixme')
+        }),
+        'hack': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.hack'),
+          color: configuration.get('keywords.color.hack')
+        }),
+        'note': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.note'),
+          color: configuration.get('keywords.color.note')
+        }),
+        'optimize': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.optimize'),
+          color: configuration.get('keywords.color.optimize')
+        }),
+        'review': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.review'),
+          color: configuration.get('keywords.color.review')
+        }),
+        'todo': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.todo'),
+          color: configuration.get('keywords.color.todo')
+        }),
+        'warning': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.warning'),
+          color: configuration.get('keywords.color.warning')
+        }),
+        'xxx': vscode.window.createTextEditorDecorationType({
+          backgroundColor: configuration.get('keywords.backgroundColor.xxx'),
+          color: configuration.get('keywords.color.xxx')
+        })
       }
     },
     'misc': configuration.get('misc.regexps')
@@ -184,7 +136,7 @@ function highlight(context) {
       let keyword = keywords[i];
 
       if (comments[keyword] !== []) {
-        activeTextEditor.setDecorations(decorationTypes[keyword], comments[keyword]);
+        activeTextEditor.setDecorations(settings.keywords.decorationTypes[keyword], comments[keyword]);
       }
     }
   }

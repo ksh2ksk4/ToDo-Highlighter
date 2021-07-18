@@ -64,6 +64,114 @@
           "scope": "window",
           "type": "boolean"
         },
+        "todo-highlighter.keywords.backgroundColor.changed": {
+          "default": "#8f2e14",
+          "markdownDescription": "`changed` キーワードの背景色(デフォルト: 弁柄色(べんがらいろ))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.fixme": {
+          "default": "#69b076",
+          "markdownDescription": "`fixme` キーワードの背景色(デフォルト: 薄緑(うすみどり))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.hack": {
+          "default": "#aa4c8f",
+          "markdownDescription": "`hack` キーワードの背景色(デフォルト: 梅紫(うめむらさき))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.note": {
+          "default": "#d0af47",
+          "markdownDescription": "`note` キーワードの背景色(デフォルト: 芥子色(からしいろ))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.optimize": {
+          "default": "#a22041",
+          "markdownDescription": "`optimize` キーワードの背景色(デフォルト: 真紅(しんく))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.review": {
+          "default": "#5c929a",
+          "markdownDescription": "`review` キーワードの背景色(デフォルト: 錆浅葱(さびあさぎ))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.todo": {
+          "default": "#cca6bf",
+          "markdownDescription": "`todo` キーワードの背景色(デフォルト: 紅藤色(べにふじいろ))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.warning": {
+          "default": "#19448e",
+          "markdownDescription": "`warning` キーワードの背景色(デフォルト: 瑠璃紺(るりこん))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.backgroundColor.xxx": {
+          "default": "#74325c",
+          "markdownDescription": "`xxx` キーワードの背景色(デフォルト: 暗紅色(あんこうしょく))",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.changed": {
+          "default": "black",
+          "markdownDescription": "`changed` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.fixme": {
+          "default": "black",
+          "markdownDescription": "`fixme` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.hack": {
+          "default": "black",
+          "markdownDescription": "`hack` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.note": {
+          "default": "black",
+          "markdownDescription": "`note` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.optimize": {
+          "default": "black",
+          "markdownDescription": "`optimize` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.review": {
+          "default": "black",
+          "markdownDescription": "`review` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.todo": {
+          "default": "black",
+          "markdownDescription": "`todo` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.warning": {
+          "default": "black",
+          "markdownDescription": "`warning` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
+        "todo-highlighter.keywords.color.xxx": {
+          "default": "black",
+          "markdownDescription": "`xxx` キーワードの前景色",
+          "scope": "window",
+          "type": "string"
+        },
         "todo-highlighter.misc.regexps": {
           "description": "ハイライトする文字列の正規表現を設定する",
           "scope": "window",
